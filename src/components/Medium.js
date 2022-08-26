@@ -67,7 +67,9 @@ const Medium = () => {
 // useImperativeHandle = allow you to use state or function of child componenet   into the parent componenet. here parent componenet means parent component 
 //   using another(child component) in it.  ******
   ////-/-/-/-/-/-/ creating Button component as child */
- const buttonRef = useRef(null);
+
+
+  //  const buttonRef = useRef(null);
 
 //  *****useImperativeHandle = allow you to use state or function of child componenet 
 // into the parent componenet. here parent componenet means parent component 
@@ -88,14 +90,15 @@ const Medium = () => {
          useImperativeHandle = allow you to use state or function of child componenet   into the parent componenet. here parent componenet means parent component 
      using another(child component) in it.  ******
      ////-/-/-/-/-/-/ creating Button component as child ****/}
-       <button
+
+       {/* <button
        onClick={() => {
         buttonRef.current.handleToggle();
        }}>
         Button from parent
        </button>
 
-       <ButtonAsChild ref={buttonRef} />
+       <ButtonAsChild ref={buttonRef} /> */}
 
    {/****** we can do same word with props like passing state and function but some time it is hard to pass at top level so, useImperitive hook
     *  useImperativeHandle = allow you to use state or function of child componenet 
