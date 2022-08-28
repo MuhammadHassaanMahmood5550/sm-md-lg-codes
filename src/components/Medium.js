@@ -1,5 +1,6 @@
-import { useEffect, useState, useRef, useLayoutEffect, useMemo } from "react";
+import { useEffect, useState, useRef, useLayoutEffect, useMemo, useCallback } from "react";
 import ButtonAsChild from "./ButtonAsChild";
+import ChildForUseCallBack from "./ChildForUseCallBack";
 const Medium = () => {
 
     //**************start = get window, screen, pixels, width, height
@@ -127,6 +128,17 @@ const Medium = () => {
 //// and that is why we use useMemo to control this          end heres
 
 
+      //****** useCallback = simillar to useMemo but useMemo stores value and useCallback stores function. useCallback = simillar to useMemo, it control rerender **********/
+      const [toggle, setToggle] = useState(0);
+      const [data, setData] = useState("the data from backend");
+  
+      const returnData = useCallback(() => {
+          console.log("function is called");
+          return data;
+      },[data]);
+          //****** useCallback = simillar to useMemo but useMemo stores value and useCallback stores function. useCallback = simillar to useMemo, it control rerender **********/
+
+
 
     return ( 
         <div id="Main_Medium">
@@ -170,6 +182,14 @@ const Medium = () => {
             >Change state1</button> */}
 {/* //******** remember when state change in our application that components rerenders
 // and that is why we use useMemo to control this. */}
+
+       {/* //****** useCallback = simillar to useMemo but useMemo stores value and useCallback stores function. useCallback = simillar to useMemo, it control rerender ********** */}
+            {/* {returnData()}  */}
+            <button
+            onClick={() => setToggle(data + 1)}
+            >toggle</button>
+            <ChildForUseCallBack returnData={returnData}/>  
+            {/* //****** useCallback = simillar to useMemo but useMemo stores value and useCallback stores function. useCallback = simillar to useMemo, it control rerender **********/}
 
 
         </div>

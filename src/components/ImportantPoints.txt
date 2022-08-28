@@ -1,1 +1,2 @@
-1) remember when state change in out application that components rerender.
+1) remember when state change in out application that components rerender,
+i.e function is recreate whenever state change.
